@@ -1,68 +1,220 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('assets/anvilhead_postapocalyptic-00.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+        /* Ensure background image is visible in dark mode */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/anvilhead_postapocalyptic-00.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 1;
+        }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+        .header {
+            width: 100%;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+        h1 {
+            font-size: clamp(24px, 8vw, 64px);
+            font-weight: 700;
+            color: #ffffff;
+            /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
+                         -1px -1px 2px rgba(0, 0, 0, 0.5);*/
+            white-space: nowrap;
+            line-height: 1.2;
+        }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+        .music-container {
+            flex: 1;
+            width: 100%;
+            max-width: 600px;
+            max-height: 300px;
+            padding: 9rem 1rem;
+            /*display: flex;*/
+            flex-direction: column;
+            gap: 1.5rem;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+        .player-wrapper {
+            /*background-color: rgba(0, 0, 0, 0.1);*/
+            backdrop-filter: blur(0px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);*/
+        }
+
+        .track-title {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        audio {
+            width: 100%;
+            height: 20px;
+            border-radius: 8px;
+        }
+
+        /* Custom scrollbar */
+        .music-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .music-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .music-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .music-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer {
+            width: 100%;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .spotify-link {
+            background-color: rgba(30, 215, 96, 0.95);
+            color: #000000;
+        }
+
+        .spotify-link:hover {
+            background-color: rgba(30, 215, 96, 1);
+        }
+
+        .soundcloud-link {
+            background-color: rgba(255, 85, 0, 0.95);
+            color: #ffffff;
+        }
+
+        .soundcloud-link:hover {
+            background-color: rgba(255, 85, 0, 1);
+        }
+
+        .spotify-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .soundcloud-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .music-container {
+                max-width: 100%;
+                padding: 1.5rem 1rem;
+                gap: 1.25rem;
+            }
+
+            .player-wrapper {
+                padding: 1.25rem;
+            }
+
+            .track-title {
+                font-size: 13px;
+            }
+
+            .footer {
+                padding: 1rem;
+                gap: 0.75rem;
+            }
+
+            .social-link {
+                padding: 0.6rem 1rem;
+                font-size: 13px;
+            }
+
+            .spotify-icon,
+            .soundcloud-icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1rem 0.5rem;
+            }
+
+            h1 {
+                font-size: clamp(20px, 10vw, 48px);
+            }
+        }
+
+        /* Dark Reader compatibility */
+        @media (prefers-color-scheme: dark) {
+            body::before {
+                opacity: 1;
+            }
+        }
