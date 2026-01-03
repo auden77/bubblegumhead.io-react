@@ -111,12 +111,18 @@
         }
 
         .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
             width: 100%;
             padding: 1.5rem;
             display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
+            justify-content: center;
+            align-items: center;
             gap: 1rem;
+            margin-left: 15%;
+            z-index: 100;
         }
 
         .social-link {
@@ -187,6 +193,7 @@
 
             .footer {
                 padding: 1rem;
+                margin-left: 10%;
                 gap: 0.75rem;
             }
 
