@@ -24,6 +24,14 @@ function App() {
                     platform="spotify"
                     url="https://artists.spotify.com/c/artist/26rrAp95IMo08NT0deHyEc"
                 />
+                <MusicPlatformLink
+                    platform="youtube"
+                    url="https://music.youtube.com/"
+                />
+                <MusicPlatformLink
+                    platform="itunes"
+                    url="http://itunes.apple.com/album/id1864306033?ls=1&app=itunes"
+                />
             </div>
         </>
     )
