@@ -15,16 +15,6 @@ function App() {
                 <h1>bubblegumhead</h1>
             </div>
 
-            <div className="music-container">
-                <div className="player-wrapper">
-                    <div className="track-title">a heart that bleeds</div>
-                    <audio controls>
-                        <source src="assets/a_heart_that_bleeds.mp3" type="audio/mpeg"/>
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-
             <div className="footer">
                 <MusicPlatformLink
                     platform="soundcloud"
